@@ -1,4 +1,13 @@
+#!/usr/bin/env ruby
+
 module Algs4Ruby
+  # StandardStats
+  # Library of statistical functions.
+  #
+  # Testing client:
+  #   ruby std_stats.rb n1 n2 n3 ...
+  #
+  # The test client reads an array of numbers from standard input and
   module StandardStats
     class << self
       # @overload min(array)
@@ -215,4 +224,41 @@ module Algs4Ruby
       end
     end
   end
+
+  # Testing client
+  if __FILE__ == $0
+    p a = ARGV.map(&:to_f)
+
+    puts "min: #{StandardStats.min(a)}"
+    puts "max: #{StandardStats.max(a)}"
+    puts "mean: #{StandardStats.mean(a)}"
+    puts "stddev: #{StandardStats.stddev(a)}"
+    puts "var: #{StandardStats.var(a)}"
+    puts "stddevp: #{StandardStats.stddevp(a)}"
+    puts "varp: #{StandardStats.varp(a)}"
+  end
 end
+
+###############################################################################
+# The code in this file is based on the java code in StdStats from alg4.jar
+# library. That library can be found at http://algs4.cs.princeton.edu
+# You can find more information on the alg4.jar library on that website.
+#
+#
+# Copyright of the algs4.jar libary belongs to Robert Sedgewick and
+# Kevin Wayne. Attribution of the algorithms can be found at the princeton
+# website as well.
+#
+# standard_stats.rb is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# standard_stats.rb is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#
+# GNU General Public License for more details.
+# You should have received a copy of the GNU General Public License
+# along with standard_stats.rb. If not, see http://www.gnu.org/licenses.
+################################################################################
