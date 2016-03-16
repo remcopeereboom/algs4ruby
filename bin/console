@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'algs4ruby'
+
+# You can add fixtures and/or initialization code here to make experimenting
+# with your gem easier. You can also use a different console, if you like.
+#
+# For example to use IRB uncomment the next few lines and comment out pry.
+# require 'irb'
+# IRB.start
+
+require 'pry'
+Pry.start

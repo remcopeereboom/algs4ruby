@@ -1,0 +1,8 @@
+AllCops:
+  TargetRubyVersion: 2.2
+
+# This cop cecks for uses of 'fail' and suggests using 'raise'.
+#   In this gem, the use of fail is encouraged. Use raise only
+#   when re-raising an exception!
+Style/SignalException:
+  Enabled: false
