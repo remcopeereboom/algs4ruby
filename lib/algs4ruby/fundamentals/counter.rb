@@ -71,7 +71,7 @@ module Algs4Ruby
 
     n, t = ARGV.map(&:to_i)
 
-    hits = n.times.map { |i| Counter.new("counter #{i}") }
+    hits = Array.new(n) { |i| Counter.new("counter #{i}") }
     t.times { hits[StandardRandom.uniform(n)].increment }
 
     n.times { |i| puts hits[i] }
