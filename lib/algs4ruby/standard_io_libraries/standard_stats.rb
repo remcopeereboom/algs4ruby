@@ -4,6 +4,9 @@ module Algs4Ruby
   # StandardStats
   # Library of statistical functions.
   #
+  # The code is based on the Java library with the same name found at
+  # http://algs4.cs.princeton.edu
+  #
   # Testing client:
   #   ruby std_stats.rb n1 n2 n3 ...
   #
