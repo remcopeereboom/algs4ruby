@@ -14,8 +14,8 @@ module Algs4Ruby
   # http://algs4.cs.princeton.edu
   #
   # Testing client:
-  #   ruby bag.rb < file1 file2 file3
-  #   ruby bag.rb
+  #   ruby bag_linked_list.rb < file1 file2 file3
+  #   ruby bag_linked_list.rb
   #
   # If given one or more files, it reads from the files. If not given any files
   # it reads from standard input. Adds each line from the input as a string to
