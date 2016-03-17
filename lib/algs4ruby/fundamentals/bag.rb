@@ -10,8 +10,6 @@ module Algs4Ruby
   # The class includes Enumerable and all those operations also take time
   # linearly proportional to the number of items in the bag.
   #
-  # Includes Enumerable.
-  #
   # The code is based on the Java library with the same name found at
   # http://algs4.cs.princeton.edu
   #
