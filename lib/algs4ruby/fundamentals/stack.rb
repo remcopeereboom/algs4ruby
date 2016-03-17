@@ -91,7 +91,6 @@ module Algs4Ruby
     # Enumerate over the items in the stack in LIFO (last in, first out)
     # order.
     # Performance: O(n) time and O(1) additional space.
-    # Performance: time proportional to the number of items on the stack.
     # @yield [Object] the items in the stack.
     # @return [Enumerator<:each>] an enumerator if no block is given.
     # @return [self] if a block is given.
