@@ -12,4 +12,9 @@ module Algs4Ruby
   # on an empty stack.
   class StackEmptyError < AlgoError; end
 
+  # QueueEmptyError
+  #
+  # A QueueEmptyError indicates that an operation failed because it was called
+  # on an empty queue.
+  class QueueEmptyError < AlgoError; end
 end
