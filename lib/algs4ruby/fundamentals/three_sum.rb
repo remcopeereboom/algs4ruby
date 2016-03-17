@@ -67,9 +67,16 @@ module Algs4Ruby
   # Counts the number of triplets that sum to zero and prints out the time to
   # perform the computation.
   if __FILE__ == $PROGRAM_NAME
+    require_relative 'stopwatch'
+
     xs = ARGF.readlines.map(&:to_i)
 
-    puts "Number of triplets: #{ThreeSum.count(xs)}"
+    timer = Stopwatch.new
+    count = ThreeSum.count(xs)
+    time = timer.elapsed_time
+
+    puts "Elapsed time: #{time}"
+    puts "Number of triplets: #{count}"
   end
 end
 
