@@ -12,6 +12,9 @@ module Algs4Ruby
   # The class includes Enumerable and all those operations also take time
   # proportional to the number of items on the stack.
   #
+  # The code is based on the Java library with the same name found at
+  # http://algs4.cs.princeton.edu
+  #
   # Testing client:
   #   ruby stack.rb < file1 file2 file3
   #   ruby stack.rb
