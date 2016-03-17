@@ -7,7 +7,8 @@ module Algs4Ruby
   # Testing client:
   #   ruby std_stats.rb n1 n2 n3 ...
   #
-  # The test client reads an array of numbers from standard input and
+  # The test client reads an array of numbers from standard input and then
+  # prints out some statistics about them.
   module StandardStats
     class << self
       # @overload min(array)
@@ -30,8 +31,8 @@ module Algs4Ruby
       def min(array, low = 0, high = array.size - 1)
         return Float::INFINITY if array.empty?
 
-        if low < 0  || high >= array.size || low > high
-          fail RangeError, "Invalid sub-array (#{low..high})."
+        if low < 0 || high >= array.size || low > high
+          fail RangeError, "Invalid sub-array (#{low}..#{high})."
         end
 
         array[low..high].min
@@ -57,8 +58,8 @@ module Algs4Ruby
       def max(array, low = 0, high = array.size - 1)
         return -Float::INFINITY if array.empty?
 
-        if low < 0  || high >= array.size || low > high
-          fail RangeError, "Invalid sub-array (#{low..high})."
+        if low < 0 || high >= array.size || low > high
+          fail RangeError, "Invalid sub-array (#{low}..#{high})."
         end
 
         array[low..high].max
@@ -82,8 +83,8 @@ module Algs4Ruby
       def sum(array, low = 0, high = array.size - 1)
         return 0 if array.empty?
 
-        if low < 0  || high >= array.size || low > high
-          fail RangeError, "Invalid sub-array (#{low..high})."
+        if low < 0 || high >= array.size || low > high
+          fail RangeError, "Invalid sub-array (#{low}..#{high})."
         end
 
         array[low..high].inject(0, :+)
@@ -107,8 +108,8 @@ module Algs4Ruby
       def mean(array, low = 0, high = array.size - 1)
         return Float::NAN if array.empty?
 
-        if low < 0  || high >= array.size || low > high
-          fail RangeError, "Invalid sub-array (#{low..high})."
+        if low < 0 || high >= array.size || low > high
+          fail RangeError, "Invalid sub-array (#{low}..#{high})."
         end
 
         slice = array[low..high]
@@ -135,13 +136,13 @@ module Algs4Ruby
       def var(array, low = 0, high = array.size - 1)
         return Float::NAN if array.empty?
 
-        if low < 0  || high >= array.size || low > high
-          fail RangeError, "Invalid sub-array (#{low..high})."
+        if low < 0 || high >= array.size || low > high
+          fail RangeError, "Invalid sub-array (#{low}..#{high})."
         end
 
         avg = mean(array, low, high)
-        sum = (low..high).inject(0.0) do |sum, i|
-          sum + (array[i] - avg) * (array[i] - avg)
+        sum = (low..high).inject(0.0) do |acc, i|
+          acc + (array[i] - avg) * (array[i] - avg)
         end
 
         sum / (high - low)
@@ -167,16 +168,16 @@ module Algs4Ruby
       def varp(array, low = 0, high = array.size - 1)
         return Float::NAN if array.empty?
 
-        if low < 0  || high >= array.size || low > high
-          fail RangeError, "Invalid sub-array (#{low..high})."
+        if low < 0 || high >= array.size || low > high
+          fail RangeError, "Invalid sub-array (#{low}..#{high})."
         end
 
         avg = mean(array, low, high)
-        sum = (low..high).inject(0.0) do |sum, i|
-          sum + (array[i] - avg) * (array[i] - avg)
+        s = (low..high).inject(0.0) do |acc, i|
+          acc + (array[i] - avg) * (array[i] - avg)
         end
 
-        sum / (high - low + 1)
+        s / (high - low + 1)
       end
 
       # @see StandardStats.stddevp stddevp for the POPULATION standard
@@ -226,7 +227,7 @@ module Algs4Ruby
   end
 
   # Testing client
-  if __FILE__ == $0
+  if __FILE__ == $PROGRAM_NAME
     p a = ARGV.map(&:to_f)
 
     puts "min: #{StandardStats.min(a)}"
@@ -257,7 +258,6 @@ end
 # standard_stats.rb is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
 # along with standard_stats.rb. If not, see http://www.gnu.org/licenses.
