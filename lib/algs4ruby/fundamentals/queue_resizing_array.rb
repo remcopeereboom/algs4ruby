@@ -60,10 +60,11 @@ module Algs4Ruby
     # @param item [Object] the item to add.
     # @return [void]
     def enqueue(item)
-      resize(2 * capacity) if capacity == @size
+      resize(2 * @items.size) if @items.size == @size
 
       @items[@last] = item
       @last += 1
+
       @last = 0 if @last == @items.size # Wrap-around
 
       @size += 1
@@ -80,12 +81,13 @@ module Algs4Ruby
 
       item = @items[@first]
       @items[@first] = nil # Prevent loitering
+
       @first += 1
+      @size -= 1
 
       @first = 0 if @first == @items.size # Wrap-around
 
-      @size -= 1
-      resize(capacity / 4) if @size != 0 && @size == capacity / 4
+      resize(@items.size / 2) if @size != 0 && @size == @items.size / 4
 
       item
     end
@@ -140,15 +142,9 @@ module Algs4Ruby
              "New capacity (#{new_cap}) must be > than array size (#{size})"
       end
 
-      old = @items
-      @items = Array.new(new_cap)
-
-      if @first < @last
-        @first.upto(@last - 1) { |i| @items[i] = old[i] }
-      else
-        @first.upto(@items.size - 1) { |i| @items[i] = old[i] }
-        0.upto(@last - 1) { |i| @items[i] = old[i] }
-      end
+      @items = Array.new(new_cap) { |i| @items[@first + i] }
+      @first = 0
+      @last = @size
     end
   end
 
