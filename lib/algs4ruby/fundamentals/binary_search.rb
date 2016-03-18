@@ -3,7 +3,7 @@ module Algs4Ruby
   #
   # The BinarySearch module provides a method to binary search a key from a
   # sorted array of items.
-  # 
+  #
   # The #index_of operation takes logarithmic time in the worst case.
   #
   # Testing client
@@ -38,7 +38,7 @@ module Algs4Ruby
           end
         end
 
-        return -1
+        -1 # Key not found!
       end
     end
   end
@@ -51,7 +51,7 @@ module Algs4Ruby
   if __FILE__ == $PROGRAM_NAME
     whitelist = File.read(ARGV.pop).split.map(&:to_i).sort
 
-    while(key = gets.chomp)
+    while (key = gets.chomp)
       puts key if BinarySearch.index_of(whitelist, key) != -1
     end
   end

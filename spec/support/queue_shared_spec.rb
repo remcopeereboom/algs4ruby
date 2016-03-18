@@ -8,7 +8,7 @@ module Algs4Ruby
 
     describe 'enqueue' do
       let(:queue) { described_class.new }
-      let(:items) { %i{foo, bar, baz, crux} }
+      let(:items) { %i(foo bar baz crux) }
 
       it 'adds the item to the queue' do
         expect(queue).to be_empty
@@ -32,9 +32,9 @@ module Algs4Ruby
       end
 
       context 'given a non-empty queue' do
-        let(:items) { %i{foo, bar, baz, crux} }
+        let(:items) { %i(foo bar baz crux) }
         let(:queue) do
-          items.each_with_object(described_class.new) { |i, s| s.enqueue i  }
+          items.each_with_object(described_class.new) { |i, s| s.enqueue i }
         end
 
         it 'returns the least recently added item' do
@@ -46,7 +46,7 @@ module Algs4Ruby
           n = items.size
           n.times do |i|
             queue.dequeue
-            expect(queue.size).to eq (n - i - 1)
+            expect(queue.size).to eq(n - i - 1)
           end
         end
       end
@@ -54,7 +54,7 @@ module Algs4Ruby
 
     describe 'peek' do
       let(:queue) { described_class.new }
-      let(:items) { %i{foo, bar, baz, crux} }
+      let(:items) { %i(foo bar baz crux) }
 
       context 'given an empty queue' do
         it 'raises a QueueEmptyError' do
@@ -64,9 +64,9 @@ module Algs4Ruby
       end
 
       context 'given a non-empty queue' do
-        let(:items) { %i{foo, bar, baz, crux} }
+        let(:items) { %i(foo bar baz crux) }
         let(:queue) do
-          items.each_with_object(described_class.new) { |i, s| s.enqueue i  }
+          items.each_with_object(described_class.new) { |i, s| s.enqueue i }
         end
 
         it 'returns the least recently added item' do
@@ -76,7 +76,7 @@ module Algs4Ruby
 
         it 'doesn\'t change the size of the queue' do
           n = items.size
-          n.times do |i|
+          n.times do
             queue.peek
             expect(queue.size).to eq n
           end
@@ -85,9 +85,9 @@ module Algs4Ruby
     end
 
     describe '#each' do
-      let(:items) { %i{foo bar baz crux} }
+      let(:items) { %i(foo bar baz crux) }
       let(:queue) do
-        items.each_with_object(described_class.new) { |i, s| s.enqueue i  }
+        items.each_with_object(described_class.new) { |i, s| s.enqueue i }
       end
 
       context 'not given a block' do

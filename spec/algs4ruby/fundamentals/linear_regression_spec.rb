@@ -14,7 +14,7 @@ module Algs4Ruby
 
       context 'given two arrays of equal length' do
         let(:xs) { [1, 2, 3, 4, 5, 6, 7, 8, 9] }
-        let(:ys) { [1, 2, 3, 4, 5, 6, 7, 9 ,9] }
+        let(:ys) { [1, 2, 3, 4, 5, 6, 7, 8, 9] }
 
         it 'returns a LinearRegression object' do
           expect(LinearRegression.new(xs, ys)).to be_a LinearRegression
@@ -58,8 +58,8 @@ module Algs4Ruby
       end
 
       context 'given the line y = ax + b' do
-        let(:a) { rand -10..10 }
-        let(:b) { rand -10..10 }
+        let(:a) { rand(-10..10) }
+        let(:b) { rand(-10..10) }
         let(:xs) { Array 1..10 }
         let(:ys) { xs.map { |x| a * x + b } }
         let(:lr) { LinearRegression.new(xs, ys) }

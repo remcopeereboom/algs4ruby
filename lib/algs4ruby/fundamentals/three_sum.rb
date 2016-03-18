@@ -12,7 +12,7 @@ module Algs4Ruby
   #
   # Testing client
   #   ruby three_sum.rb input_file
-  #   ruby three_sum.rb 
+  #   ruby three_sum.rb
   #     20
   #     12
   #     -32
@@ -60,7 +60,7 @@ module Algs4Ruby
 
   # Testing client
   #   ruby three_sum.rb input_file
-  #   ruby three_sum.rb 
+  #   ruby three_sum.rb
   #     20
   #     12
   #     -32

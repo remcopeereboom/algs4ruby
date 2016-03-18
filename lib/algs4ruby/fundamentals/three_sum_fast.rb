@@ -13,7 +13,7 @@ module Algs4Ruby
   #
   # Testing client
   #   ruby three_sum_fast.rb input_file
-  #   ruby three_sum_fast.rb 
+  #   ruby three_sum_fast.rb
   #     20
   #     12
   #     -32
@@ -29,7 +29,7 @@ module Algs4Ruby
         a = array.sort!
 
         count = 0
-        (0...n).each do  |i|
+        (0...n).each do |i|
           ((i + 1)...n).each do |j|
             k = BinarySearch.index_of(a, -(a[i] + a[j]))
             count += 1 if k > j
@@ -47,7 +47,7 @@ module Algs4Ruby
 
         a = array.sort!
 
-        (0...n).each do  |i|
+        (0...n).each do |i|
           ((i + 1)...n).each do |j|
             k = BinarySearch.index_of(array, -(array[i] + array[j]))
             puts "#{a[i]} #{a[j]} #{a[k]}" if k > j
@@ -59,7 +59,7 @@ module Algs4Ruby
 
   # Testing client
   #   ruby three_sum_fast.rb input_file
-  #   ruby three_sum_fast.rb 
+  #   ruby three_sum_fast.rb
   #     20
   #     12
   #     -32

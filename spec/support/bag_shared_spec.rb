@@ -18,16 +18,16 @@ module Algs4Ruby
           expect(bag).to be_empty
 
           bag.add(item_1)
-          expect(bag.include? item_1).to be true
+          expect(bag.include?(item_1)).to be true
 
           bag.add(item_2)
-          expect(bag.include? item_2).to be true
+          expect(bag.include?(item_2)).to be true
 
           bag.add(item_3)
-          expect(bag.include? item_3).to be true
+          expect(bag.include?(item_3)).to be true
 
           bag.add(item_4)
-          expect(bag.include? item_4).to be true
+          expect(bag.include?(item_4)).to be true
         end
 
         it 'increases the size of the bag by 1' do
@@ -59,7 +59,7 @@ module Algs4Ruby
     end
 
     describe '#each' do
-      let(:items) { %i{foo, bar, baz, crux} }
+      let(:items) { %i(foo bar baz crux) }
       let(:bag) do
         b = described_class.new
         items.each { |i| b.add i }
@@ -68,7 +68,7 @@ module Algs4Ruby
 
       context 'given a block' do
         it 'returns the bag' do
-          expect(bag.each {} ).to eq bag
+          expect(bag.each {}).to eq bag
         end
 
         it 'yields every item in the bag' do

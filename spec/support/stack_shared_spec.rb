@@ -34,7 +34,7 @@ module Algs4Ruby
 
     describe '#pop' do
       context 'given a non-empty stack' do
-        let(:items) { %i{ foo bar baz crux } }
+        let(:items) { %i(foo bar baz crux) }
         let(:stack) do
           items.each_with_object(described_class.new) { |i, s| s.push i }
         end
@@ -75,7 +75,7 @@ module Algs4Ruby
       end
 
       context 'given a non-empty stack' do
-        let(:items) { %i{ foo bar baz crux } }
+        let(:items) { %i(foo bar baz crux) }
         let(:stack) do
           items.each_with_object(described_class.new) { |i, s| s.push i }
         end
@@ -106,7 +106,7 @@ module Algs4Ruby
     end
 
     describe '#each' do
-      let(:items) { %i{ foo bar baz crux } }
+      let(:items) { %i(foo bar baz crux) }
       let(:stack) do
         items.each_with_object(described_class.new) { |i, s| s.push i }
       end

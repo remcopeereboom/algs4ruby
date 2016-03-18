@@ -42,11 +42,11 @@ module Algs4Ruby
     n = ARGV.pop.to_i
 
     timer_1 = Stopwatch.new
-    sum_1 = (1..n).inject(0.0) { |sum, i| i + Math.sqrt(i) }
+    sum_1 = (1..n).inject(0.0) { |sum, i| sum + Math.sqrt(i) }
     time_1 = timer_1.elapsed_time
 
     timer_2 = Stopwatch.new
-    sum_2 = (1..n).inject(0.0) { |sum, i| i + i**0.5 }
+    sum_2 = (1..n).inject(0.0) { |sum, i| sum + i**0.5 }
     time_2 = timer_2.elapsed_time
 
     puts "Sum of square roots upto #{n}"

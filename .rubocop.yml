@@ -6,3 +6,12 @@ AllCops:
 #   when re-raising an exception!
 Style/SignalException:
   Enabled: false
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false

@@ -8,7 +8,7 @@ module Algs4Ruby
         let(:key) { 7 }
 
         it 'returns  -1' do
-          expect(BinarySearch.index_of(array, key)).to eq -1
+          expect(BinarySearch.index_of(array, key)).to eq(-1)
         end
       end
 

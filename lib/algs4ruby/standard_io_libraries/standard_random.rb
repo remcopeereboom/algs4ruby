@@ -280,14 +280,12 @@ module Algs4Ruby
         fail RangeError, "The subarray range is invalid (#{range})."
       end
 
-      range.each do |i|
+      range.each_with_object(array) do |i, a|
         r = i + uniform(range.max - i + 1) # Between i and high
-        temp = array[i]
-        array[i] = array[r]
-        array[r] = temp
+        temp = a[i]
+        a[i] = a[r]
+        a[r] = temp
       end
-
-      array
     end
 
     private

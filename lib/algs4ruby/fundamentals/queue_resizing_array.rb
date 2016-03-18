@@ -38,7 +38,7 @@ module Algs4Ruby
     include Enumerable
     attr_reader :size
     alias length size
- 
+
     # Initialize a new empty queue.
     # Performance: O(1) worst case time and O(1) space.
     def initialize
@@ -64,7 +64,7 @@ module Algs4Ruby
 
       @items[@last] = item
       @last += 1
-      last = 0 if @last == @items.size # Wrap-around
+      @last = 0 if @last == @items.size # Wrap-around
 
       @size += 1
     end
@@ -85,7 +85,7 @@ module Algs4Ruby
       @first = 0 if @first == @items.size # Wrap-around
 
       @size -= 1
-      resize(capacity / 4) if @size !=0 && @size == capacity / 4
+      resize(capacity / 4) if @size != 0 && @size == capacity / 4
 
       item
     end

@@ -42,7 +42,7 @@ module Algs4Ruby
     prev = DoublingRatio.time_trial(125)
 
     n = 250
-    while true
+    loop do
       time = DoublingRatio.time_trial(n)
       puts "n: #{n}"
       puts "time: #{time}"

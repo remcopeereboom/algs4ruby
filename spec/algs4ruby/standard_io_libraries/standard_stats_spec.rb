@@ -13,7 +13,7 @@ module Algs4Ruby
         let(:a) { [1, 23, 5, 12.0, -5.1] }
 
         it 'returns the minimum of the array' do
-          expect(StandardStats.min(a)).to eq -5.1
+          expect(StandardStats.min(a)).to eq(-5.1)
         end
       end
 
@@ -57,11 +57,11 @@ module Algs4Ruby
         end
       end
     end
-    
+
     describe '.max' do
       context 'given an empty array' do
         it 'returns -Float::INFINITY' do
-          expect(StandardStats.max([])).to eq -Float::INFINITY
+          expect(StandardStats.max([])).to eq(-Float::INFINITY)
         end
       end
 
@@ -387,7 +387,9 @@ module Algs4Ruby
         let(:high) { 5 }
 
         it 'raises a RangeError' do
-          expect { StandardStats.stddev(a, low, high) }.to raise_error RangeError
+          expect do
+            StandardStats.stddev(a, low, high)
+          end.to raise_error RangeError
         end
       end
 
@@ -397,7 +399,9 @@ module Algs4Ruby
         let(:high) { 8 }
 
         it 'raises a RangeError' do
-          expect { StandardStats.stddev(a, low, high) }.to raise_error RangeError
+          expect do
+            StandardStats.stddev(a, low, high)
+          end.to raise_error RangeError
         end
       end
 

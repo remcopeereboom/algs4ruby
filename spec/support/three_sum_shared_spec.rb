@@ -10,7 +10,7 @@ module Algs4Ruby
       end
 
       context 'given an array of one number' do
-        let(:a) { [ rand(-10..10) ] }
+        let(:a) { [rand(-10..10)] }
 
         it 'returns 0' do
           expect(described_class.count(a)).to eq 0
