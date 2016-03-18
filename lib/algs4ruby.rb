@@ -15,6 +15,7 @@ require 'algs4ruby/fundamentals/queue_resizing_array'
 require 'algs4ruby/fundamentals/stack'
 require 'algs4ruby/fundamentals/stack_linked_list'
 require 'algs4ruby/fundamentals/stack_resizing_array'
+require 'algs4ruby/fundamentals/stopwatch'
 require 'algs4ruby/fundamentals/three_sum'
 
 require 'algs4ruby/standard_io_libraries/standard_random'
