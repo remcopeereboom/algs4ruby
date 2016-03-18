@@ -1,4 +1,6 @@
 module Algs4Ruby
+  # ThreeSum
+  #
   # The ThreeSum module provides methods for counting and printing the number
   # of triples in an array of numbers that sum to 0.
   #
