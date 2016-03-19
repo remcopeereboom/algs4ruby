@@ -22,6 +22,7 @@ require 'algs4ruby/fundamentals/three_sum'
 require 'algs4ruby/fundamentals/three_sum_fast'
 require 'algs4ruby/fundamentals/union_find'
 require 'algs4ruby/fundamentals/union_find_quick_union'
+require 'algs4ruby/fundamentals/union_find_quick_find'
 
 require 'algs4ruby/standard_io_libraries/standard_random'
 require 'algs4ruby/standard_io_libraries/standard_stats'
