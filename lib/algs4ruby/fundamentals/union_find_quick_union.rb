@@ -15,7 +15,7 @@ module Algs4Ruby
   #
   #
   # Testing client:
-  #   ruby union_find.rb
+  #   ruby union_find_quick_union.rb
   #   10
   #   1 2
   #   2 3
