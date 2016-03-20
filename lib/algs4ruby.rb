@@ -3,6 +3,7 @@ require 'algs4ruby/version'
 require 'algs4ruby/algo_error'
 
 require 'algs4ruby/fundamentals/average'
+require 'algs4ruby/fundamentals/accumulator'
 require 'algs4ruby/fundamentals/bag'
 require 'algs4ruby/fundamentals/bag_linked_list'
 require 'algs4ruby/fundamentals/bag_resizing_array'
