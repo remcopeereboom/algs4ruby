@@ -42,7 +42,7 @@ module Algs4Ruby
 
         slice.each do |i|
           while i > slice.first && less?(copy, i, i - 1, &block)
-            swap(copy, i, i - 1) 
+            swap(copy, i, i - 1)
             i -= 1
           end
         end
@@ -63,7 +63,7 @@ module Algs4Ruby
       def sort!(array, slice = 0...array.size, &block)
         slice.each do |i|
           while i > slice.first && less?(array, i, i - 1, &block)
-            swap(array, i, i - 1) 
+            swap(array, i, i - 1)
             i -= 1
           end
         end
