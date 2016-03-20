@@ -39,6 +39,9 @@ module Algs4Ruby
   # size 250, 500, 1000, 2000 and so forth, along with ratios of running times
   # between successive array sizes.
   if __FILE__ == $PROGRAM_NAME
+    require_relative 'stopwatch'
+    require_relative 'three_sum'
+
     prev = DoublingRatio.time_trial(125)
 
     n = 250
@@ -48,6 +51,7 @@ module Algs4Ruby
       puts "time: #{time}"
       puts "ratio: #{time / prev}"
       prev = time
+      n *= 2
     end
   end
 end
