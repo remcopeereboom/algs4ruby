@@ -2,7 +2,7 @@ require 'algs4ruby/version'
 
 require 'algs4ruby/algo_error'
 
-## Fundamentals ##
+# Fundamentals #
 require 'algs4ruby/fundamentals/average'
 require 'algs4ruby/fundamentals/accumulator'
 require 'algs4ruby/fundamentals/bag'
@@ -28,11 +28,14 @@ require 'algs4ruby/fundamentals/union_find_quick_find'
 require 'algs4ruby/fundamentals/union_find_quick_union'
 require 'algs4ruby/fundamentals/union_find_weighted_quick_union'
 
-## Sorting ##
+# Sorting #
 require 'algs4ruby/sorting/insertion'
 
-## Searching ##
+# Searching #
 
-## Standard IO Libraries ##
+# Graph #
+require 'algs4ruby/graphs/graph'
+
+# Standard IO Libraries #
 require 'algs4ruby/standard_io_libraries/standard_random'
 require 'algs4ruby/standard_io_libraries/standard_stats'
