@@ -343,7 +343,7 @@ module Algs4Ruby
       # @raise [ArgumentError] if v < 0.
       def tree(v)
         graph = Graph.new(v)
-        return graph if v == 1
+        return graph if v < 2
 
         # Cayley's theorem: there are v**(v - 2) labeled trees on v vertices.
         # Prufer sequence: sequence of v - 2 values in the range 0...v.
@@ -355,7 +355,21 @@ module Algs4Ruby
         degrees = Array.new(v, 1)
         prufer_seq.each { |i| degrees[i] += 1 }
 
-        fail NotImplementedError
+        # Add all vertices of degree 1 to a priority queue.
+        pq = MinPQ.new((0...v).select { |i| 1 == degrees[i] })
+
+        (0...(v - 2)).each do |i|
+          a = pq.delete_min
+          b = prufer_seq[i]
+
+          graph.add_edge(a, b)
+          degrees[a] -= 1
+          degrees[b] -= 1
+
+          pq.insert(b) if degrees[b] == 1
+        end
+
+        graph.add_edge(pq.delete_min, pq.delete_min)
 
         graph
       end
