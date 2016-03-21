@@ -35,6 +35,7 @@ require 'algs4ruby/sorting/insertion'
 
 # Graph #
 require 'algs4ruby/graphs/graph'
+require 'algs4ruby/graphs/graph_generator'
 
 # Standard IO Libraries #
 require 'algs4ruby/standard_io_libraries/standard_random'
