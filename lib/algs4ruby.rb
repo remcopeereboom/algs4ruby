@@ -36,9 +36,10 @@ require 'algs4ruby/sorting/max_pq'
 # Searching #
 
 # Graph #
+require 'algs4ruby/graphs/depth_first_search'
 require 'algs4ruby/graphs/graph'
 require 'algs4ruby/graphs/graph_generator'
-require 'algs4ruby/graphs/depth_first_search'
+require 'algs4ruby/graphs/nonrecursive_dfs'
 
 # Standard IO Libraries #
 require 'algs4ruby/standard_io_libraries/standard_random'
