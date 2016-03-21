@@ -30,6 +30,7 @@ require 'algs4ruby/fundamentals/union_find_weighted_quick_union'
 
 # Sorting #
 require 'algs4ruby/sorting/insertion'
+require 'algs4ruby/sorting/min_pq'
 
 # Searching #
 

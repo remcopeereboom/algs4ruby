@@ -17,4 +17,10 @@ module Algs4Ruby
   # A QueueEmptyError indicates that an operation failed because it was called
   # on an empty queue.
   class QueueEmptyError < AlgoError; end
+
+  # PriorityQueueEmptyError
+  #
+  # A PriorityQueueEmptyError indicates that an operation failed because it was
+  # called on an empty queue.
+  class PriorityQueueEmptyError < AlgoError; end
 end
