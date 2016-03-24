@@ -4,7 +4,7 @@ module Algs4Ruby
   # The DepthFirstSearch class represents a data type for determining which
   # vertices are connected to a given source vertex in an undirected graph.
   # For a version that find paths to the source vertex, see
-  # {DepthFirstSearchPaths}.
+  # {DepthFirstPaths}.
   #
   # This implementation uses depth-first search. The constructor takes time
   # proportional to v + e in the worst case, where v is the number of
