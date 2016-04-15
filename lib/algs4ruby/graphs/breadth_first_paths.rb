@@ -2,7 +2,11 @@ module Algs4Ruby
   # BreadthFirstPaths
   #
   # The BreadthFirstPaths class represents a data type for finding paths from a
+<<<<<<< HEAD
   # source vertex or a set of source vertices to every other vertex in an
+=======
+  # source vertex (or set of source vertices) to every other vertex in an
+>>>>>>> develop
   # undirected graph.
   #
   # This implementation uses breadth-first search. The initializer takes time
@@ -19,6 +23,7 @@ module Algs4Ruby
   # It takes two command-line arguments, a graph passed in from a file, and
   # a source vertex. It then prints out all the vertices connected to source.
   class BreadthFirstPaths
+<<<<<<< HEAD
     # @overload initialize(graph, source)
     #   Compute a shortest path between the given source vertex and every other
     #   vertex in the graph.
@@ -37,6 +42,22 @@ module Algs4Ruby
       sources = [sources] unless sources.is_a? Enumerable
       sources.reject { |v| v < 0 || v >= graph.v }
 
+=======
+    # Initializes a new BreadthFirstPaths.
+    # @note initialization is NOT a cheap operation!
+    # @overload initialize(graph, source)
+    #   @param graph [Graph] an undirected graph.
+    #   @param source [Integer] a vertex id.
+    # @overload initialize(graph, sources)
+    #   @param graph [Graph] an undirected graph.
+    #   @param source [Enumerable<Integer>] an enumeration of vertex ids.
+    def initialize(graph, sources)
+      @marked = Array.new(graph.v, false) 
+      @distance_to = Array.new(graph.v)
+      @edge_to = Array.new(graph.v)
+
+      sources = [sources] unless sources.is_a? Enumerable
+>>>>>>> develop
       bfs(graph, sources)
     end
 
@@ -44,11 +65,15 @@ module Algs4Ruby
     # @param v [Integer] a vertex id.
     # @return [Boolean] true if there is such a path, false otherwise.
     def marked?(v)
+<<<<<<< HEAD
       return false unless (0...@marked.size).cover?(v)
+=======
+>>>>>>> develop
       @marked[v]
     end
     alias has_path_to? marked?
 
+<<<<<<< HEAD
     # Returns the number of edges in a shortest path between a source vertex
     # and the given vertex v.
     # @param v [Integer] the vertex id of the given vertex.
@@ -62,6 +87,17 @@ module Algs4Ruby
     end
 
     # Returns an enumerator of the path between the source vertex and vertex v,
+=======
+    # Returns the length of the path from the nearest source vertex to v.
+    # @param v [Integer] a vertex id.
+    # @return [Integer] the length of the path if there is one.
+    # @return [nil] if there is no path.
+    def distance_to(v)
+      @distance_to[v]
+    end
+
+    # Returns an enumerator of the path from the nearest source vertex to v,
+>>>>>>> develop
     # or nil if there is no such path.
     # @param v [Integer] a vertex id.
     # @return [Enumerator<Integer>] the path if there is a path.
@@ -82,6 +118,7 @@ module Algs4Ruby
 
     private
 
+<<<<<<< HEAD
     # Breadth-first search from multiple sources.
     # @param graph [Graph] an undirected graph.
     # @param sources [Enumerable<Integer>] a list of source vertices.
@@ -92,6 +129,19 @@ module Algs4Ruby
         @marked[s] = true
         @distance_to[s] = 0
         q.enqueue(s)
+=======
+    # Breadth first search from sources.
+    # @param graph [Graph] an undirected graph.
+    # @param sources [Enumerable<Integer>] an enumeration of vertex ids.
+    # @return [void]
+    def bfs(graph, sources)
+      q = Queue.new
+
+      sources.each do |source|
+        @distance_to[source] = 0
+        @marked[source] = true
+        q.enqueue(source)
+>>>>>>> develop
       end
 
       until q.empty?
@@ -101,6 +151,10 @@ module Algs4Ruby
           @edge_to[w] = v
           @distance_to[w] = @distance_to[v] + 1
           @marked[w] = true
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
           q.enqueue(w)
         end
       end
@@ -121,11 +175,19 @@ module Algs4Ruby
     f = File.open(ARGV.pop, 'r')
     graph = Graph.from(f)
 
+<<<<<<< HEAD
     dfs = BreadthFirstPaths.new(graph, source)
     graph.v.times do |v|
       if dfs.has_path_to?(v)
         print "#{source} to #{v} (#{dfs.distance_to(v)}):"
         dfs.path_to(v).each { |w| print(w == source ? w : "-#{w}") }
+=======
+    bfp = BreadthFirstPaths .new(graph, source)
+    graph.v.times do |v|
+      if bfp.has_path_to?(v)
+        print "#{source} to #{v} (#{bfp.distance_to(v)}): "
+        bfp.path_to(v).each { |w| print(w == source ? w : "-#{w}") }
+>>>>>>> develop
         puts
       else
         puts "#{source} not connected to #{v}."
