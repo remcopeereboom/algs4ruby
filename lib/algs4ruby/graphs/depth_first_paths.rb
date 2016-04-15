@@ -34,7 +34,6 @@ module Algs4Ruby
     # @param v [Integer] a vertex id.
     # @return [Boolean] true if there is such a path, false otherwise.
     def marked?(v)
-      return false unless (0...@marked.size).cover?(v)
       @marked[v]
     end
     alias has_path_to? marked?
