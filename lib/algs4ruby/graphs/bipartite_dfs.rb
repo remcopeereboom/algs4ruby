@@ -1,7 +1,7 @@
 module Algs4Ruby
-  # Bipartite
+  # BipartiteDFS
   #
-  # The {Bipartite} class represents a data type for determining if an
+  # The {BipartiteDFS} class represents a data type for determining if an
   # undirected graph is bipartite or if it contains an odd-length cycle.
   #
   # The {#bipartite?} operation determines whether the graph is bipartite
@@ -19,7 +19,7 @@ module Algs4Ruby
   #
   # @!attribute odd_cycle [r]
   #   @return [Stack<Integer>] vertex identifiers that form an odd length cycle.
-  class Bipartite
+  class BipartiteDFS
     attr_reader :odd_cycle
 
     # Calculate if a given undirected graph is bipartite or if contains an odd
@@ -120,7 +120,7 @@ module Algs4Ruby
     f.times do
       graph.add_edge(rand(v1 + v2), rand(v1 + v2))
     end
-    bp = Bipartite.new(graph)
+    bp = BipartiteDFS.new(graph)
 
     puts graph
     if bp.bipartite?
