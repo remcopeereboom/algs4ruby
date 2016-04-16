@@ -26,6 +26,9 @@ module Algs4Ruby
   #
   # The client takes a graph as a command line argument and prints the
   # connected components and its matching vertices.
+  #
+  # @!attribute count [r]
+  #   @return [Integer] the number of connected components.
   class ConnectedComponents
     attr_reader :count
 
