@@ -104,7 +104,7 @@ module Algs4Ruby
         edges = Set.new
         while graph.e < e
           a = StandardRandom.uniform(v1)
-          b = StandardRandom.uniform(v2)
+          b = v1 + StandardRandom.uniform(v2)
 
           edge = Edge.new(vertices[a], vertices[b])
           unless edges.include? edge
