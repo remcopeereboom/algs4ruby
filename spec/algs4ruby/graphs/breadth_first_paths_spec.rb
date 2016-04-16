@@ -8,21 +8,16 @@ module Algs4Ruby
         let(:e) { 0 }
         let(:source) { rand(v) }
         let(:graph) { GraphGenerator.simple(v, e) }
-<<<<<<< HEAD
-        let(:dfs) { BreadthFirstPaths.new(graph, source) }
-=======
-        let(:bfp) { BreadthFirstPaths.new(graph, source) }
->>>>>>> develop
+        let(:bfs) { BreadthFirstPaths.new(graph, source) }
 
         it 'returns false for every v other than the source' do
           graph.v.times
                 .reject { |w| w == source }
-<<<<<<< HEAD
-                .each { |w| expect(dfs.marked?(w)).to be false }
+                .each { |w| expect(bfs.marked?(w)).to be false }
         end
 
         it 'returns true for the source' do
-          expect(dfs.marked?(source)).to be true
+          expect(bfs.marked?(source)).to be true
         end
       end
 
@@ -30,18 +25,18 @@ module Algs4Ruby
         let(:v) { 10 }
         let(:source) { rand(v) }
         let(:graph) { GraphGenerator.complete(v) }
-        let(:dfs) { BreadthFirstPaths.new(graph, source) }
+        let(:bfs) { BreadthFirstPaths.new(graph, source) }
 
         it 'returns true for every v' do
-          graph.v.times { |w| expect(dfs.marked?(w)).to be true }
+          graph.v.times { |w| expect(bfs.marked?(w)).to be true }
         end
 
         it 'returns a proper distance' do
           graph.v.times do |w|
             if w == source
-              expect(dfs.distance_to(w)).to eq 0
+              expect(bfs.distance_to(w)).to eq 0
             else
-              expect(dfs.distance_to(w)).to eq 1
+              expect(bfs.distance_to(w)).to eq 1
             end
           end
         end
@@ -51,20 +46,10 @@ module Algs4Ruby
         let(:v) { 10 }
         let(:sources) { Array 0...v }
         let(:graph) { GraphGenerator.complete(v) }
-        let(:dfs) { BreadthFirstPaths.new(graph, sources) }
+        let(:bfs) { BreadthFirstPaths.new(graph, sources) }
 
         it 'returns true for every v' do
-          graph.v.times { |w| expect(dfs.marked?(w)).to be true }
-        end
-
-        it 'returns a distance of 0 for every v' do
-          graph.v.times { |w| expect(dfs.distance_to(w)).to eq 0 }
-=======
-                .each { |w| expect(bfp.marked?(w)).to be false }
-        end
-
-        it 'returns true for the source' do
-          expect(bfp.marked?(source)).to be true
+          graph.v.times { |w| expect(bfs.marked?(w)).to be true }
         end
       end
 
@@ -135,31 +120,11 @@ module Algs4Ruby
           graph.v.times
                 .reject { |w| w == source }
                 .each { |w| expect(bfp.distance_to(w)).to be 1 }
->>>>>>> develop
         end
       end
 
       context 'called on a star graph' do
         let(:v) { 10 }
-<<<<<<< HEAD
-        let(:source) { rand(v) }
-        let(:graph) { GraphGenerator.star(v) }
-        let(:dfs) { BreadthFirstPaths.new(graph, source) }
-
-        it 'returns true for every v' do
-          graph.v.times { |w| expect(dfs.marked?(w)).to be true }
-        end
-
-        it 'returns a proper distance' do
-          graph.v.times do |w|
-            if w == source
-              expect(dfs.distance_to(w)).to eq 0
-            else
-              expect(dfs.distance_to(w)).to be > 0
-              expect(dfs.distance_to(w)).to be < v
-            end
-          end
-=======
         let(:graph) { GraphGenerator.star(v) }
         let(:source) do
           (0...graph.v).max_by { |w| graph.adjacent(w).size }
@@ -174,7 +139,6 @@ module Algs4Ruby
           graph.v.times
                 .reject { |w| w == source }
                 .each { |w| expect(bfp.distance_to(w)).to be 1 }
->>>>>>> develop
         end
       end
     end
