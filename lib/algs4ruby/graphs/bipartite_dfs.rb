@@ -14,7 +14,7 @@ module Algs4Ruby
   # is the number of vertices and e is the number of edges. Afterwards, all
   # other operations take constant time in the worst case.
   #
-  # The code is based on the Java library with the same name found at
+  # The code is based on the Java library Bipartite found at
   # http://algs4.cs.princeton.edu
   #
   # @!attribute odd_cycle [r]
@@ -143,15 +143,15 @@ end
 # Kevin Wayne. Attribution of the algorithms can be found at the princeton
 # website as well.
 #
-# bipartite.rb is free software: you can redistribute it and/or
+# bipartite_dfs.rb is free software: you can redistribute it and/or
 # modify it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# bipartite.rb is distributed in the hope that it will be useful,
+# bipartite_dfs.rb is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
-# along with bipartite.rb. If not, see http://www.gnu.org/licenses.
+# along with bipartite_dfs.rb. If not, see http://www.gnu.org/licenses.
 ################################################################################
