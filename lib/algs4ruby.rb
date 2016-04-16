@@ -36,6 +36,7 @@ require 'algs4ruby/sorting/max_pq'
 # Searching #
 
 # Graph #
+require 'algs4ruby/graphs/bipartite'
 require 'algs4ruby/graphs/breadth_first_paths'
 require 'algs4ruby/graphs/connected_components'
 require 'algs4ruby/graphs/depth_first_search'
