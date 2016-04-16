@@ -23,4 +23,10 @@ module Algs4Ruby
   # A PriorityQueueEmptyError indicates that an operation failed because it was
   # called on an empty queue.
   class PriorityQueueEmptyError < AlgoError; end
+
+  # NotBipartiteError
+  #
+  # A NotBipartiteError indicates that an operation failed because it was
+  # called on an undirected graph that was not bipartite.
+  class NotBipartiteError < AlgoError; end
 end
