@@ -85,7 +85,7 @@ module Algs4Ruby
     end
 
     describe '#color' do
-      context 'given un an non-bipartite graph' do
+      context 'given a non-bipartite graph' do
         let(:v) { [3, 5, 7, 9].sample }
         let(:graph) { GraphGenerator.cycle(v) }
         let(:bp) { described_class.new(graph) }
