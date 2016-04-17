@@ -29,6 +29,7 @@ require 'algs4ruby/fundamentals/union_find_quick_union'
 require 'algs4ruby/fundamentals/union_find_weighted_quick_union'
 
 # Sorting #
+require 'algs4ruby/sorting/binary_insertion'
 require 'algs4ruby/sorting/insertion'
 require 'algs4ruby/sorting/min_pq'
 require 'algs4ruby/sorting/max_pq'
